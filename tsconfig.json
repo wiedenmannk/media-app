@@ -1,0 +1,37 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,  
+        "target": "es2020",
+        "noImplicitAny": false,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "baseUrl": "./",
+        "importHelpers": true,
+        "module": "commonjs",
+        "lib": [
+          "es2018",
+          "dom"
+        ],  
+        "paths": {
+            "@backend/*": ["src/backend/*"],
+            "@functions/*": ["src/backend/functions/*"],
+            "@routes/*": ["src/backend/routes/*"],
+            "@model/*": ["src/model/*"],
+            "*": [
+                "node_modules/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": false
+      }
+  
+}
