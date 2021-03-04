@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import { config } from "./model/config";
-// import { log } from "./common/functions/log";
+import { log } from "./common/functions/log";
 
 const createError = require("http-errors");
 const path = require("path");
@@ -9,6 +9,7 @@ const logger = require("morgan");
 
 const indexRouter = require(config.path.routes + "index");
 const usersRouter = require(config.path.routes + "users");
+const angular = require(config.path.routes + "angular");
 const app = express();
 
 // view engine setup
@@ -20,11 +21,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 const staticFolder = path.join(__dirname, "web");
+app.use(express.static(config.path.angular));
 app.use(express.static(staticFolder));
 console.log("static folder", staticFolder);
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/backend", angular);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -10,7 +10,7 @@
           "style": "scss"
         }
       },
-      "root": "",
+      "root": "/backend",
       "sourceRoot": "src",
       "prefix": "",
       "architect": {

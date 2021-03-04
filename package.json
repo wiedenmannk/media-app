@@ -10,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .ts",
     "build": "npm run clean & tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist && npm run scssbuild",
+    "ngbuild": "ng build",
     "clean": "rm -rf dist/*",
     "copy": "node src/copy.js",
     "copyonce": "node src/copyOnce.js",

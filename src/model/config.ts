@@ -6,6 +6,8 @@ export interface Path {
   app: string,
   templates: string,
   routes: string,
+  dist: string,
+  angular: string,
 };
 
 export interface AppConfig {
@@ -24,5 +26,7 @@ export const config: AppConfig = {
     app: srcDir + "app/",
     templates: srcDir + "templates/",
     routes: srcDir + "backend/routes/",
+    dist: baseDir + "dist/",
+    angular: baseDir + "dist/angular/",
   }
 };
