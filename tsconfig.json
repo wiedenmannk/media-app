@@ -22,6 +22,7 @@
             "@functions/*": ["src/backend/functions/*"],
             "@routes/*": ["src/backend/routes/*"],
             "@model/*": ["src/model/*"],
+            "@modules/*": ["src/app/modules/*"],
             "*": [
                 "node_modules/*"
             ]
