@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MenuComponent } from "../menu/menu.component";
+
 
 @Component({
   selector: 'default-layout',
@@ -6,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class DefaultLayoutComponent implements OnInit {
+export class DefaultLayoutComponent {
 
+  @ViewChild("menu") menu: MenuComponent
   public menuIsOpen = true;
   constructor() { }
 
-  ngOnInit(): void {
+  public toggle() {
+    this.menuIsOpen = !this.menuIsOpen;
+    this.menu.toggle();
   }
 
 }
