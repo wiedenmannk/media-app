@@ -1,0 +1,9 @@
+{
+  "main": {
+    "home": "Home",
+    "app-name": "MediaApp",
+    "dashboard": "Dashboard",
+    "videos": "Videos",
+    "admin": "Admin"
+  }
+}

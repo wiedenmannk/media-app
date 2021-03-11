@@ -1,20 +1,17 @@
-<ul ngbNav #nav="ngbNav" class="nav-tabs justify-content-start">
-    <li class="nav-item">
-        <a ngbNavLink routerLink="/">
-            <div>Home</div>
+<div [ngClass]="{'is-open' : isOpen}" class="sideMenu" #sideMenu>
+    <div class="main-menu">
+        <h2 translate>main.app-name</h2>
+        <a routerLink="/">
+            <i class="pi pi-home"></i>{{ 'main.home' | translate }}
         </a>
-    </li>
-    <li ngbDropdown class="nav-item">
-        <a href (click)="false" class="nav-link" ngbDropdownToggle>Dropdown</a>
-        <div ngbDropdownMenu>
-            <button ngbDropdownItem>Action</button>
-            <button ngbDropdownItem>Another action</button>
-            <button ngbDropdownItem>Something else here</button>
-            <div class="dropdown-divider"></div>
-            <button ngbDropdownItem>Separated link</button>
-        </div>
-    </li>
-</ul>
-
-<div [ngbNavOutlet]="nav" class="mt-2"></div>
-
+        <a routerLink="/">
+            <i class="pi pi-pencil"></i>Dashboard
+        </a>
+        <a routerLink="/">
+            <i class="pi pi-video"></i>Videos
+        </a>
+        <a routerLink="/">
+            <i class="pi pi-users"></i>Admin
+        </a>
+    </div>
+</div>

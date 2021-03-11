@@ -6,6 +6,7 @@
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
+    "comma-dangle": ["error", "never"],
 
     // override configuration set by extending "eslint:recommended"
     "no-empty": "warn",

@@ -6,7 +6,7 @@ import { AccordionModule } from "primeng/accordion";
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     NgbModule,

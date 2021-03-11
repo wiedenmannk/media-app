@@ -1,3 +1,12 @@
-<div class="container">
-    <menu></menu>
+<div class="ma-container">
+    <ma-menu #menu [isOpen]="menuIsOpen"></ma-menu>
+    <div class="content">
+        <span style="font-size: 30px;cursor: pointer" (click)="menu.toggle()">
+            <i class="pi pi-bars"></i>
+        </span>
+        <div class="content-text">
+            <h2>Toggle Sidebar Navigation</h2>
+            <h3>html css javascript</h3>
+        </div>
+    </div>
 </div>
