@@ -23,6 +23,7 @@
             "@routes/*": ["src/backend/routes/*"],
             "@model/*": ["src/model/*"],
             "@modules/*": ["src/app/modules/*"],
+            "@appmodel/*": ["src/app/model/*"],
             "*": [
                 "node_modules/*"
             ]

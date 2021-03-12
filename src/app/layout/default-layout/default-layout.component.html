@@ -1,5 +1,7 @@
 <div class="ma-container">
-    <ma-menu #menu [isOpen]="menuIsOpen"></ma-menu>
+    <ma-menu #menu [isOpen]="menuIsOpen">
+        <ma-menu-content [title]="menuTitle"></ma-menu-content>
+    </ma-menu>
     <div class="content">
         <div class="content-body" [ngClass]="{'content-body-menu' : menuIsOpen}">
         <div class="header">

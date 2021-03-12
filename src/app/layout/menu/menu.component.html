@@ -1,17 +1,5 @@
 <div [ngClass]="{'is-open' : isOpen}" class="sideMenu" #sideMenu>
     <div class="main-menu">
-        <h2 translate>main.app-name</h2>
-        <a routerLink="/">
-            <i class="pi pi-home"></i>{{ 'main.home' | translate }}
-        </a>
-        <a routerLink="/">
-            <i class="pi pi-pencil"></i>Dashboard
-        </a>
-        <a routerLink="/">
-            <i class="pi pi-video"></i>Videos
-        </a>
-        <a routerLink="/">
-            <i class="pi pi-users"></i>Admin
-        </a>
+        <ng-content></ng-content>
     </div>
 </div>

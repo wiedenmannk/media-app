@@ -4,6 +4,7 @@
     "app-name": "MediaApp",
     "dashboard": "Dashboard",
     "videos": "Videos",
-    "admin": "Admin"
+    "admin": "Admin",
+    "developer": "Developer"
   }
 }

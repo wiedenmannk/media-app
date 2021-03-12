@@ -12,6 +12,7 @@ export class DefaultLayoutComponent {
 
   @ViewChild("menu") menu: MenuComponent
   public menuIsOpen = true;
+  public menuTitle = "main.app-name";
   constructor() { }
 
   public toggle() {

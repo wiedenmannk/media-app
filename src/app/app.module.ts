@@ -12,6 +12,7 @@ import {  MainModule } from "@modules/main/main.module";
 import { DefaultLayoutComponent } from "./layout/default-layout/default-layout.component";
 import { MenuComponent } from "./layout/menu/menu.component";
 import { RouterModule } from "@angular/router";
+import { MenuContentComponent } from './layout/menu/menu-content/menu-content.component';
 
 
 /*
@@ -30,6 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     DefaultLayoutComponent,
     MenuComponent,
+    MenuContentComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    // MainModule,
+    MainModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
