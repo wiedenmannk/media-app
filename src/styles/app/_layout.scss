@@ -1,4 +1,3 @@
-// @use "vars" as *;
 @import "src/styles/app/vars";
 
 body {
@@ -68,4 +67,32 @@ a {
   height: 250%;
   width: 20%;
   background-color: #3d4687;
+}
+
+.menu-toggler {
+  height: 55px;
+  width: 60px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  cursor: pointer;
+  background-color: #a6a6a6;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border-radius: 3px;
+
+  i {
+    display: block;
+    font-size: 45px;
+    margin: auto;
+    color: #373737
+  }
+}
+
+.menu-toggler:hover {
+  background-color: #353535;
+  i:hover {
+    color: #cac9ff
+  }
 }
