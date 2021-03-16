@@ -4,17 +4,10 @@
     </ma-menu>
     <div class="content">
         <div class="content-body" [ngClass]="{'content-body-menu' : menuIsOpen}">
-        <div class="header">
+            <router-outlet></router-outlet>
             <div class="menu-toggler" (click)="toggle()">
                 <i class="pi pi-bars"></i>
             </div>
-        </div>
-        <main>
-            <div class="content-text">
-                <h2>Toggle Sidebar Navigation</h2>
-                <h3>html css javascript</h3>
-            </div>
-        </main>
         </div>
     </div>
 </div>

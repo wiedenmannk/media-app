@@ -24,6 +24,7 @@
             "@model/*": ["src/model/*"],
             "@modules/*": ["src/app/modules/*"],
             "@appmodel/*": ["src/app/model/*"],
+            "@dev/*": ["src/app/dev/*"],
             "*": [
                 "node_modules/*"
             ]

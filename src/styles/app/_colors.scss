@@ -1,6 +1,8 @@
 $ma-selector: #a6a6a6;
+$ma-border: #353535;
 
 
 :root {
  --selector: #{$ma-selector};
+ --border: #{$ma-border};
 }

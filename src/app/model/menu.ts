@@ -28,6 +28,7 @@ export const menu: MenuItem[] = [
     {
         label: "main.developer",
         link: "/dev",
+        icon: "pi pi-discord",
     },
 
 ];
