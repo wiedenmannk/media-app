@@ -15,7 +15,14 @@ export class WelcomeComponent implements OnDestroy {
       icon: "pi pi-pencil",
       routerLink: "dashboard",
       command: (event?: any) => {
-        console.log(event);
+        this.showMessage = false;
+      },
+    },
+    {
+      label: "Drag&Drop",
+      icon: "pi pi-arrow-down",
+      routerLink: "dragdrop",
+      command: (event?: any) => {
         this.showMessage = false;
       },
     }

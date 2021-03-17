@@ -17,7 +17,7 @@ export class MenuContentComponent {
   public selectItem(id: string) {
     const newItem = document.getElementById(id);
     const oldItem = document.getElementById(this.selectedId);
-    console.log("oldItem", oldItem);
+
     if(oldItem) {
       oldItem.classList.remove(this.selectClass);
     }

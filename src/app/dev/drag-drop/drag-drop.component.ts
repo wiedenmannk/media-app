@@ -1,18 +1,16 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'drag-drop',
+  templateUrl: './drag-drop.component.html',
+  styleUrls: ['./drag-drop.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DragDropComponent {
 
   constructor() { }
 
   dropBox: HTMLElement | null = null;
 
-  ngOnInit(): void {
-  }
 
   public start(event) {
     console.log("start", event);
