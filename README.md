@@ -1,4 +1,4 @@
-# Node.js with TypeScript, Express, EJS and TypeScript
+# Node.js with TypeScript, Angular, Express, EJS and TypeScript
 
 ## and SCSS Support
 
@@ -12,11 +12,11 @@ npm install
 
 To Start Server run  
 npm start  
-this will run tsc -w & npm run scss & nodemon
+this will run the Angular dev part
 
 run  
 npm run dev  
-is like npm start, but also clean dist folder
+runs node.js with ejs in dev mode
 
 ---
 
