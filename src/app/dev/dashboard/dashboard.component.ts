@@ -8,11 +8,11 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   constructor() { }
+  ngOnInit(): void {
+  }
 
   dropBox: HTMLElement | null = null;
 
-  ngOnInit(): void {
-  }
 
   public start(event) {
     console.log("start", event);

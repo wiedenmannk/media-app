@@ -5,6 +5,7 @@ import { AccordionModule } from "primeng/accordion";
 import { ContentLayoutComponent } from '../../layout/content-layout/content-layout.component';
 import { TabMenuModule } from "primeng/tabmenu";
 import { DragDropModule } from "primeng/dragdrop";
+import { DragdropService } from "@service/dragdrop.service";
 
 const components = [ContentLayoutComponent];
 
@@ -19,6 +20,7 @@ const components = [ContentLayoutComponent];
     TabMenuModule,
     DragDropModule,
       ...components,
-  ]
+  ],
+  providers:[DragdropService],
 })
 export class MainModule { }

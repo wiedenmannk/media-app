@@ -25,6 +25,7 @@
             "@modules/*": ["src/app/modules/*"],
             "@appmodel/*": ["src/app/model/*"],
             "@dev/*": ["src/app/dev/*"],
+            "@service/*": ["src/app/service/*"],
             "*": [
                 "node_modules/*"
             ]
