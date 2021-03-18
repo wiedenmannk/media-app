@@ -1,10 +1,10 @@
-# Node.js with TypeScript, Angular, Express, EJS and TypeScript
+# Node.js with TypeScript, Angular, Express, EJS
 
 ## and SCSS Support
 
 ---
 
-### This is a skeleton application for Node.js with TypeScript and Express
+### This is a skeleton application for Node.js, Angular, TypeScript and Express
 
 ---
 
