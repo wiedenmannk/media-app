@@ -14,7 +14,7 @@ export class DragDropComponent {
   isDragging: boolean = false;
 
   constructor(private dd: DragdropService) {
-    dd.checkArgs(this.isDragging, this.dragObject);
+    // dd.checkArgs(this.isDragging, this.dragObject);
   }
 
 /*
@@ -43,6 +43,7 @@ export class DragDropComponent {
       console.log(this.dropBox.childNodes[i]);
       const clone = this.dragObject.cloneNode(true) as HTMLElement;
       console.log(this.dropBox.appendChild(clone));
+      this.dd.saveHTML(clone);
       console.log("nodes", this.dropBox.childNodes);
     } else {
       this.dragObject = null;
@@ -58,7 +59,7 @@ export class DragDropComponent {
   }
 
   public onDragLeave(event) {
-    console.log("leave");
+    // console.log("leave");
   }
 
   public setBox(event: DragEvent) {

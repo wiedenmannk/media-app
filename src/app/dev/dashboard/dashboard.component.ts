@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, HostListener } from '@angular/core';
+import { DragdropService } from "@service/dragdrop.service";
 
 @Component({
   selector: 'dashboard',
@@ -7,21 +8,50 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  dropBox: HTMLElement | null = null;
+  dragObject: HTMLElement | null = null;
+  isDragging: boolean = false;
+
+  constructor(private dd: DragdropService) {
+    // dd.checkArgs(this.isDragging, this.dragObject);
+  }
+
   ngOnInit(): void {
   }
 
-  dropBox: HTMLElement | null = null;
-
-
-  public start(event) {
-    console.log("start", event);
+  @HostListener("document:dragstart", ["$event"])
+  dragStart(event: DragEvent) {
+    // event.preventDefault();
+    console.log("dragStart Host");
+    const item = event.target as HTMLElement;
+    item.style.opacity = "1";
+    console.log(event.target);
   }
 
-  public end(event: DragEvent, item) {
+  public start(event, item: HTMLElement) {
+    console.log("start", event);
+    console.log("startItem", item);
+    this.dragObject = item;
+  }
+
+  public end(event: DragEvent) {
     console.log("end", event);
-    console.log("element", event.target);
-    console.log("end item", item);
+    if(this.dropBox) {
+      console.log("push me to container");
+      console.log("childnodes",this.dropBox.hasChildNodes());
+      const i = this.dropBox.childNodes.length;
+      console.log("index",i);
+      console.log(this.dropBox.childNodes[i]);
+      const clone = this.dragObject.cloneNode(true) as HTMLElement;
+      console.log(this.dropBox.appendChild(clone));
+      this.dd.saveHTML(clone);
+      console.log("nodes", this.dropBox.childNodes);
+    } else {
+      this.dragObject = null;
+      console.log("object has no container... has left");
+    }
+    // this.dragObject = null;
+    this.isDragging = false;
   }
 
   public handleDrop(event) {
@@ -59,6 +89,20 @@ export class DashboardComponent implements OnInit {
       this.dropBox = item;
       console.log("item", item);
     }
+  }
+
+  public onDrag($event) {
+    this.isDragging = true;
+  }
+
+  public checkForDrop(event) {
+    setTimeout(()=> {
+      if(this.isDragging) {
+        console.log("has left");
+        this.dropBox = null;
+        return false;
+      }
+    },5);
   }
 
 }
