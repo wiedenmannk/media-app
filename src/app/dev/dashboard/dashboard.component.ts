@@ -17,6 +17,12 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      document.addEventListener("drop", function(event){
+        console.log("js drop");
+        event.preventDefault();
+      });
+    }, 100);
   }
 
   @HostListener("document:dragstart", ["$event"])
@@ -24,7 +30,48 @@ export class DashboardComponent implements OnInit {
     // event.preventDefault();
     console.log("dragStart Host");
     const item = event.target as HTMLElement;
+    this.isDragging = true;
     item.style.opacity = "1";
+    console.log(event.target);
+  }
+
+  @HostListener("document:drag", ["$event"])
+  drag(event: DragEvent) {
+    // console.log("drag");
+    const item = event.target as HTMLElement;
+    this.dragObject = item;
+    // item.style.border = "1px solid black";
+    item.style.backgroundColor = "#898989";
+  }
+
+  @HostListener("document:dragend", ["$event"])
+  dragEnd(event: DragEvent) {
+    console.log("dragend");
+    if(this.dropBox) {
+      console.log(event.target);
+
+      const clone = this.dragObject.cloneNode(true) as HTMLElement;
+      this.dropBox.appendChild(clone);
+      this.dd.saveHTML(clone);
+      console.log("nodes", this.dropBox.childNodes);
+      } else {
+        console.log("object has no container... has left");
+      }
+      this.dragObject = null;
+  }
+
+  @HostListener("document:drop", ["$event"])
+  dropEvent(event: DragEvent) {
+    console.log("drop");
+    event.preventDefault();
+  }
+
+  /**
+  * DragLeave gives you the target where you dragover
+  * */
+  @HostListener("document:dragleave", ["$event"])
+  dragLeave(event: DragEvent) {
+    console.log("dragleave");
     console.log(event.target);
   }
 
@@ -32,24 +79,17 @@ export class DashboardComponent implements OnInit {
     console.log("start", event);
     console.log("startItem", item);
     this.dragObject = item;
+    this.isDragging = true;
   }
 
   public end(event: DragEvent) {
     console.log("end", event);
-    if(this.dropBox) {
+
       console.log("push me to container");
       console.log("childnodes",this.dropBox.hasChildNodes());
       const i = this.dropBox.childNodes.length;
       console.log("index",i);
       console.log(this.dropBox.childNodes[i]);
-      const clone = this.dragObject.cloneNode(true) as HTMLElement;
-      console.log(this.dropBox.appendChild(clone));
-      this.dd.saveHTML(clone);
-      console.log("nodes", this.dropBox.childNodes);
-    } else {
-      this.dragObject = null;
-      console.log("object has no container... has left");
-    }
     // this.dragObject = null;
     this.isDragging = false;
   }
